@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+.small-flag {
+    width     : 40px;
+    border    : 1px solid #111;
+    box-shadow: 5px 10px 25px 0 rgb(0 0 50 / 15%);
+}
