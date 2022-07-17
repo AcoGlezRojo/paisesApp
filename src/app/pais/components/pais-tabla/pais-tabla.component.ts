@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Capital } from '../../interfaces/capital.interface';
 import { Country } from '../../interfaces/pais.interface';
 
 @Component({

@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Capital } from '../interfaces/capital.interface';
 import { Country } from '../interfaces/pais.interface';
 
 @Injectable({
@@ -18,9 +17,15 @@ export class PaisService {
 
   }
 
-  buscarCapital(termino: string): Observable<Capital[]> {
+  buscarCapital(termino: string): Observable<Country[]> {
     const url = `${environment.apiURL}/capital/${termino}`;
-    return this.http.get<Capital[]>(url);
+    return this.http.get<Country[]>(url);
+
+  }
+
+  buscarRegion(termino: string): Observable<Country[]> {
+    const url = `${environment.apiURL}/region/${termino}?fields=name,capital,cca2,population,flag,flags`;
+    return this.http.get<Country[]>(url);
 
   }
 
