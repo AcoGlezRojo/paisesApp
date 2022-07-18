@@ -1,14 +1,16 @@
-<h1>Por Región <small>{{ regionActiva |  titlecase }}</small></h1>
-<hr>
-<h5>Selecciones la región</h5>
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h1>Por Región <small>{{ regionActiva |  titlecase }}</small></h1>
+    <hr>
+    <h5>Selecciones la región</h5>
 
-<div>
-    <button *ngFor="let region of regiones" [class]="getClaseCSS(region)" (click)="activarRegion(region)">
-        {{ region | titlecase }}
-    </button>
+    <div>
+        <button *ngFor="let region of regiones" [class]="getClaseCSS(region)" (click)="activarRegion(region)">
+            {{ region | titlecase }}
+        </button>
+    </div>
+
+    <hr>
 </div>
-
-<hr>
 
 <div *ngIf="paises.length > 0">
     <app-pais-tabla [paises]="paises"></app-pais-tabla>
